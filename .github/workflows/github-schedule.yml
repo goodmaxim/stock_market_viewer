@@ -28,6 +28,7 @@ jobs:
       - name: Run script
         env:
           bit_api_key: ${{ secrets.API_KEY }}
+          csv_location: ${{ env.csv_location }}
         run: python runner.py
 
       - name: Commit changes
