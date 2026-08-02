@@ -2,4 +2,3 @@
 test/
 *.log
 app.py
-*.csv
