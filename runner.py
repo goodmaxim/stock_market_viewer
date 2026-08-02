@@ -12,8 +12,7 @@ if __name__ == "__main__":
     load_dotenv()
 
     API_KEY = os.getenv("bit_api_key")
-    print(API_KEY[:3], "...", API_KEY[-3:])
-    CSV_FILE_PATH = "info.csv"
+    CSV_FILE_PATH = os.getenv("csv_location")
 
     url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
 
