@@ -25,14 +25,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Set environmental variables
-        run: echo "bit_api_key=${{ secrets.API_KEY }}" >> .env
-
       - name: Run script
+        env:
+          bit_api_key: ${{ secrets.API_KEY }}
         run: python runner.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          file_pattern: '*.csv'
-          commit_message: "Update file automatically"
+          commit_message: "Add data automatically"
